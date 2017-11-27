@@ -10,6 +10,9 @@ tags:
 language_tabs:
   json: JSON
   shell: cURL
+  java: java
+  php: php
+  csharp: C#
 ---
 
 @Documentação
@@ -258,7 +261,7 @@ merchantsPost($clientId, $proposal);
 }
 ```
 
-```c#
+```csharp
 
 using System;
 using System.Diagnostics;
