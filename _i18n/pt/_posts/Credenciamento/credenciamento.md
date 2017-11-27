@@ -10,9 +10,10 @@ tags:
 language_tabs:
   json: JSON
   shell: cURL
-  java: java
   php: php
-  csharp: C#
+  java: java
+  csharp: c#
+  javascript: javascript
 ---
 
 @Documentação
@@ -102,217 +103,288 @@ Merchants é a representação da entidade de estabelecimento comercial para a e
 
 ```shell
 curl -X POST \
-  https://apidev.cielo.com.br/sandbox/affiliate/v1/merchants \
+  https://api.cielo.com.br/sandbox/affiliate/v1/merchants \
   -H 'cache-control: no-cache' \
   -H 'client_id: LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ' \
   -H 'content-type: application/json' \
-  -H 'postman-token: 6f316316-7a86-b6c7-07e8-a24d09d8e207' \
   -d '{
-"agribusiness": false,
-"solutions": {
-"code": 18,
-"numberOfEquipaments": 1,
-"ecommercePlan": 0,
-"telephoneCompanies": "VIVO"
-},
-"customer": {
-"documentType": "F",
-"documentNumber": 35947512017,
-"name": "nome",
-"companyName": "nome",
-"mei": false,
-"stateEnrollment": 0,
-"mcc":  8021,
-"accounts": {
-"bankCode": 341,
-"bankBranch": "1475",
-"accountNumber": "132997",
-"type": "CHECKING_ACCOUNT_CIELO"
-},
-"tradingName": "Vendinha 47599041079",
-"contactName": "Cliente teste",
-"contactEmail": "teste_47599041079@teste.com.br",
-"phoneNumbers": {
-"type":  "CELL_PHONE",
-"ddd": 11,
-"number": 988995623
-},
-"addresses": {
-"type": "COMMERCIAL_ADDRESS",
-"postalCode": 13327371,
-"address": "Rua Santa Luzia",
-"number": "52",
-"add": "casa",
-"neighborhood": "Nova Era",
-"city": "Salto",
-"state": "SP",
-"country": "Brasil"
-},
-"owners": {
-"name": "Cliente 14452619010",
-"documentNumber": 11264316488,
-"birthDate": "1989-02-08",
-"phoneNumbers": {
-"type": "CELL_PHONE",
-"ddd": 11,
-"number": 998561234
-},
-"affiliatorCode": "123456789",
-"averageRevenue": 150,
-"cieloPlanCode": 1,
-"amountOfDaysForliquidation": 1
-}
-}
+	"agribusiness": false,
+	"solutions": {
+		"code": 18,
+		"numberOfEquipaments": 1,
+		"ecommercePlan": 0,
+		"telephoneCompanies": "VIVO"
+	},
+	"customer": {
+		"documentType": "F",
+		"documentNumber": 35947512017,
+		"name": "nome",
+		"companyName": "nome",
+		"mei": false,
+		"stateEnrollment": 0,
+		"mcc": 8021,
+		"accounts": {
+			"bankCode": 341,
+			"bankBranch": "1475",
+			"accountNumber": "132997",
+			"type": "CHECKING_ACCOUNT_CIELO"
+		},
+		"tradingName": "Vendinha 47599041079",
+		"contactName": "Cliente teste",
+		"contactEmail": "teste_47599041079@teste.com.br",
+		"phoneNumbers": {
+			"type": "CELL_PHONE",
+			"ddd": 11,
+			"number": 988995623
+		},
+		"addresses": {
+			"type": "COMMERCIAL_ADDRESS",
+			"postalCode": 13327371,
+			"address": "Rua Santa Luzia",
+			"number": "52",
+			"add": "casa",
+			"neighborhood": "Nova Era",
+			"city": "Salto",
+			"state": "SP",
+			"country": "Brasil"
+		},
+		"owners": {
+			"name": "Cliente 14452619010",
+			"documentNumber": 11264316488,
+			"birthDate": "1989-02-08",
+			"phoneNumbers": {
+				"type": "CELL_PHONE",
+				"ddd": 11,
+				"number": 998561234
+			},
+			"affiliatorCode": "123456789",
+			"averageRevenue": 150,
+			"cieloPlanCode": 1,
+			"amountOfDaysForliquidation": 1
+		}
+	}
 }'
 ```
 
 ```json
 {
-"agribusiness": false,
-"solutions": {
-"code": 18,
-"numberOfEquipaments": 1,
-"ecommercePlan": 0,
-"telephoneCompanies": "VIVO"
-},
-"customer": {
-"documentType": "F",
-"documentNumber": 35947512017,
-"name": "nome",
-"companyName": "nome",
-"mei": false,
-"stateEnrollment": 0,
-"mcc":  8021,
-"accounts": {
-"bankCode": 341,
-"bankBranch": "1475",
-"accountNumber": "132997",
-"type": "CHECKING_ACCOUNT_CIELO"
-},
-"tradingName": "Vendinha 47599041079",
-"contactName": "Cliente teste",
-"contactEmail": "teste_47599041079@teste.com.br",
-"phoneNumbers": {
-"type":  "CELL_PHONE",
-"ddd": 11,
-"number": 988995623
-},
-"addresses": {
-"type": "COMMERCIAL_ADDRESS",
-"postalCode": 13327371,
-"address": "Rua Santa Luzia",
-"number": "52",
-"add": "casa",
-"neighborhood": "Nova Era",
-"city": "Salto",
-"state": "SP",
-"country": "Brasil"
-},
-"owners": {
-"name": "Cliente 14452619010",
-"documentNumber": 11264316488,
-"birthDate": "1989-02-08",
-"phoneNumbers": {
-"type": "CELL_PHONE",
-"ddd": 11,
-"number": 998561234
-},
-"affiliatorCode": "123456789",
-"averageRevenue": 150,
-"cieloPlanCode": 1,
-"amountOfDaysForliquidation": 1
-}
-}
+	"agribusiness": false,
+	"solutions": {
+		"code": 18,
+		"numberOfEquipaments": 1,
+		"ecommercePlan": 0,
+		"telephoneCompanies": "VIVO"
+	},
+	"customer": {
+		"documentType": "F",
+		"documentNumber": 35947512017,
+		"name": "nome",
+		"companyName": "nome",
+		"mei": false,
+		"stateEnrollment": 0,
+		"mcc": 8021,
+		"accounts": {
+			"bankCode": 341,
+			"bankBranch": "1475",
+			"accountNumber": "132997",
+			"type": "CHECKING_ACCOUNT_CIELO"
+		},
+		"tradingName": "Vendinha 47599041079",
+		"contactName": "Cliente teste",
+		"contactEmail": "teste_47599041079@teste.com.br",
+		"phoneNumbers": {
+			"type": "CELL_PHONE",
+			"ddd": 11,
+			"number": 988995623
+		},
+		"addresses": {
+			"type": "COMMERCIAL_ADDRESS",
+			"postalCode": 13327371,
+			"address": "Rua Santa Luzia",
+			"number": "52",
+			"add": "casa",
+			"neighborhood": "Nova Era",
+			"city": "Salto",
+			"state": "SP",
+			"country": "Brasil"
+		},
+		"owners": {
+			"name": "Cliente 14452619010",
+			"documentNumber": 11264316488,
+			"birthDate": "1989-02-08",
+			"phoneNumbers": {
+				"type": "CELL_PHONE",
+				"ddd": 11,
+				"number": 998561234
+			},
+			"affiliatorCode": "123456789",
+			"averageRevenue": 150,
+			"cieloPlanCode": 1,
+			"amountOfDaysForliquidation": 1
+		}
+	}
 }
 ```
 
 ```java
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import .MerchantsApi;
+OkHttpClient client = new OkHttpClient();
 
-import java.io.File;
-import java.util.*;
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\r\n\t\"agribusiness\": false,\r\n\t\"solutions\": {\r\n\t\t\"code\": 18,\r\n\t\t\"numberOfEquipaments\": 1,\r\n\t\t\"ecommercePlan\": 0,\r\n\t\t\"telephoneCompanies\": \"VIVO\"\r\n\t},\r\n\t\"customer\": {\r\n\t\t\"documentType\": \"F\",\r\n\t\t\"documentNumber\": 35947512017,\r\n\t\t\"name\": \"nome\",\r\n\t\t\"companyName\": \"nome\",\r\n\t\t\"mei\": false,\r\n\t\t\"stateEnrollment\": 0,\r\n\t\t\"mcc\": 8021,\r\n\t\t\"accounts\": {\r\n\t\t\t\"bankCode\": 341,\r\n\t\t\t\"bankBranch\": \"1475\",\r\n\t\t\t\"accountNumber\": \"132997\",\r\n\t\t\t\"type\": \"CHECKING_ACCOUNT_CIELO\"\r\n\t\t},\r\n\t\t\"tradingName\": \"Vendinha 47599041079\",\r\n\t\t\"contactName\": \"Cliente teste\",\r\n\t\t\"contactEmail\": \"teste_47599041079@teste.com.br\",\r\n\t\t\"phoneNumbers\": {\r\n\t\t\t\"type\": \"CELL_PHONE\",\r\n\t\t\t\"ddd\": 11,\r\n\t\t\t\"number\": 988995623\r\n\t\t},\r\n\t\t\"addresses\": {\r\n\t\t\t\"type\": \"COMMERCIAL_ADDRESS\",\r\n\t\t\t\"postalCode\": 13327371,\r\n\t\t\t\"address\": \"Rua Santa Luzia\",\r\n\t\t\t\"number\": \"52\",\r\n\t\t\t\"add\": \"casa\",\r\n\t\t\t\"neighborhood\": \"Nova Era\",\r\n\t\t\t\"city\": \"Salto\",\r\n\t\t\t\"state\": \"SP\",\r\n\t\t\t\"country\": \"Brasil\"\r\n\t\t},\r\n\t\t\"owners\": {\r\n\t\t\t\"name\": \"Cliente 14452619010\",\r\n\t\t\t\"documentNumber\": 11264316488,\r\n\t\t\t\"birthDate\": \"1989-02-08\",\r\n\t\t\t\"phoneNumbers\": {\r\n\t\t\t\t\"type\": \"CELL_PHONE\",\r\n\t\t\t\t\"ddd\": 11,\r\n\t\t\t\t\"number\": 998561234\r\n\t\t\t},\r\n\t\t\t\"affiliatorCode\": \"123456789\",\r\n\t\t\t\"averageRevenue\": 150,\r\n\t\t\t\"cieloPlanCode\": 1,\r\n\t\t\t\"amountOfDaysForliquidation\": 1\r\n\t\t}\r\n\t}\r\n}");
+Request request = new Request.Builder()
+  .url("https://apidev.cielo.com.br/sandbox/affiliate/v1/merchants")
+  .post(body)
+  .addHeader("content-type", "application/json")
+  .addHeader("client_id", "LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ")
+  .build();
 
-public class MerchantsApiExample {
-
-    public static void main(String[] args) {
-        
-        MerchantsApi apiInstance = new MerchantsApi();
-        String clientId = clientId_example; // String | client identifier
-        ProposalRequest proposal = ; // ProposalRequest | 
-        try {
-            Proposal result = apiInstance.merchantsPost(clientId, proposal);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MerchantsApi#merchantsPost");
-            e.printStackTrace();
-        }
-    }
-}
+Response response = client.newCall(request).execute();
 ```
 
 ```php
-merchantsPost($clientId, $proposal);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantsApi->merchantsPost: ', $e->getMessage(), PHP_EOL;
+$request = new HttpRequest();
+$request->setUrl('https://apidev.cielo.com.br/sandbox/affiliate/v1/merchants');
+$request->setMethod(HTTP_METH_POST);
+
+$request->setHeaders(array(
+  'client_id' => 'LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ',
+  'content-type' => 'application/json'
+));
+
+$request->setBody('{
+	"agribusiness": false,
+	"solutions": {
+		"code": 18,
+		"numberOfEquipaments": 1,
+		"ecommercePlan": 0,
+		"telephoneCompanies": "VIVO"
+	},
+	"customer": {
+		"documentType": "F",
+		"documentNumber": 35947512017,
+		"name": "nome",
+		"companyName": "nome",
+		"mei": false,
+		"stateEnrollment": 0,
+		"mcc": 8021,
+		"accounts": {
+			"bankCode": 341,
+			"bankBranch": "1475",
+			"accountNumber": "132997",
+			"type": "CHECKING_ACCOUNT_CIELO"
+		},
+		"tradingName": "Vendinha 47599041079",
+		"contactName": "Cliente teste",
+		"contactEmail": "teste_47599041079@teste.com.br",
+		"phoneNumbers": {
+			"type": "CELL_PHONE",
+			"ddd": 11,
+			"number": 988995623
+		},
+		"addresses": {
+			"type": "COMMERCIAL_ADDRESS",
+			"postalCode": 13327371,
+			"address": "Rua Santa Luzia",
+			"number": "52",
+			"add": "casa",
+			"neighborhood": "Nova Era",
+			"city": "Salto",
+			"state": "SP",
+			"country": "Brasil"
+		},
+		"owners": {
+			"name": "Cliente 14452619010",
+			"documentNumber": 11264316488,
+			"birthDate": "1989-02-08",
+			"phoneNumbers": {
+				"type": "CELL_PHONE",
+				"ddd": 11,
+				"number": 998561234
+			},
+			"affiliatorCode": "123456789",
+			"averageRevenue": 150,
+			"cieloPlanCode": 1,
+			"amountOfDaysForliquidation": 1
+		}
+	}
+}');
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
 }
 ```
 
 ```csharp
-
-using System;
-using System.Diagnostics;
-using .Api;
-using .Client;
-using ;
-
-namespace Example
-{
-    public class merchantsPostExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new MerchantsApi();
-            var clientId = clientId_example;  // String | client identifier
-            var proposal = new ProposalRequest(); // ProposalRequest |  (optional) 
-
-            try
-            {
-                Proposal result = apiInstance.merchantsPost(clientId, proposal);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling MerchantsApi.merchantsPost: " + e.Message );
-            }
-        }
-    }
-}
+var client = new RestClient("https://apidev.cielo.com.br/sandbox/affiliate/v1/merchants");
+var request = new RestRequest(Method.POST);
+request.AddHeader("client_id", "LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\r\n\t\"agribusiness\": false,\r\n\t\"solutions\": {\r\n\t\t\"code\": 18,\r\n\t\t\"numberOfEquipaments\": 1,\r\n\t\t\"ecommercePlan\": 0,\r\n\t\t\"telephoneCompanies\": \"VIVO\"\r\n\t},\r\n\t\"customer\": {\r\n\t\t\"documentType\": \"F\",\r\n\t\t\"documentNumber\": 35947512017,\r\n\t\t\"name\": \"nome\",\r\n\t\t\"companyName\": \"nome\",\r\n\t\t\"mei\": false,\r\n\t\t\"stateEnrollment\": 0,\r\n\t\t\"mcc\": 8021,\r\n\t\t\"accounts\": {\r\n\t\t\t\"bankCode\": 341,\r\n\t\t\t\"bankBranch\": \"1475\",\r\n\t\t\t\"accountNumber\": \"132997\",\r\n\t\t\t\"type\": \"CHECKING_ACCOUNT_CIELO\"\r\n\t\t},\r\n\t\t\"tradingName\": \"Vendinha 47599041079\",\r\n\t\t\"contactName\": \"Cliente teste\",\r\n\t\t\"contactEmail\": \"teste_47599041079@teste.com.br\",\r\n\t\t\"phoneNumbers\": {\r\n\t\t\t\"type\": \"CELL_PHONE\",\r\n\t\t\t\"ddd\": 11,\r\n\t\t\t\"number\": 988995623\r\n\t\t},\r\n\t\t\"addresses\": {\r\n\t\t\t\"type\": \"COMMERCIAL_ADDRESS\",\r\n\t\t\t\"postalCode\": 13327371,\r\n\t\t\t\"address\": \"Rua Santa Luzia\",\r\n\t\t\t\"number\": \"52\",\r\n\t\t\t\"add\": \"casa\",\r\n\t\t\t\"neighborhood\": \"Nova Era\",\r\n\t\t\t\"city\": \"Salto\",\r\n\t\t\t\"state\": \"SP\",\r\n\t\t\t\"country\": \"Brasil\"\r\n\t\t},\r\n\t\t\"owners\": {\r\n\t\t\t\"name\": \"Cliente 14452619010\",\r\n\t\t\t\"documentNumber\": 11264316488,\r\n\t\t\t\"birthDate\": \"1989-02-08\",\r\n\t\t\t\"phoneNumbers\": {\r\n\t\t\t\t\"type\": \"CELL_PHONE\",\r\n\t\t\t\t\"ddd\": 11,\r\n\t\t\t\t\"number\": 998561234\r\n\t\t\t},\r\n\t\t\t\"affiliatorCode\": \"123456789\",\r\n\t\t\t\"averageRevenue\": 150,\r\n\t\t\t\"cieloPlanCode\": 1,\r\n\t\t\t\"amountOfDaysForliquidation\": 1\r\n\t\t}\r\n\t}\r\n}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```javascript
-var  = require('');
+var request = require("request");
 
-var api = new .MerchantsApi()
+var options = { method: 'POST',
+  url: 'https://apidev.cielo.com.br/sandbox/affiliate/v1/merchants',
+  headers: 
+   { client_id: 'LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ',
+     'content-type': 'application/json' },
+  body: 
+   { agribusiness: false,
+     solutions: 
+      { code: 18,
+        numberOfEquipaments: 1,
+        ecommercePlan: 0,
+        telephoneCompanies: 'VIVO' },
+     customer: 
+      { documentType: 'F',
+        documentNumber: 35947512017,
+        name: 'nome',
+        companyName: 'nome',
+        mei: false,
+        stateEnrollment: 0,
+        mcc: 8021,
+        accounts: 
+         { bankCode: 341,
+           bankBranch: '1475',
+           accountNumber: '132997',
+           type: 'CHECKING_ACCOUNT_CIELO' },
+        tradingName: 'Vendinha 47599041079',
+        contactName: 'Cliente teste',
+        contactEmail: 'teste_47599041079@teste.com.br',
+        phoneNumbers: { type: 'CELL_PHONE', ddd: 11, number: 988995623 },
+        addresses: 
+         { type: 'COMMERCIAL_ADDRESS',
+           postalCode: 13327371,
+           address: 'Rua Santa Luzia',
+           number: '52',
+           add: 'casa',
+           neighborhood: 'Nova Era',
+           city: 'Salto',
+           state: 'SP',
+           country: 'Brasil' },
+        owners: 
+         { name: 'Cliente 14452619010',
+           documentNumber: 11264316488,
+           birthDate: '1989-02-08',
+           phoneNumbers: { type: 'CELL_PHONE', ddd: 11, number: 998561234 },
+           affiliatorCode: '123456789',
+           averageRevenue: 150,
+           cieloPlanCode: 1,
+           amountOfDaysForliquidation: 1 } } },
+  json: true };
 
-var clientId = clientId_example; // {String} client identifier
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-var opts = { 
-  'proposal':  // {ProposalRequest} 
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.merchantsPost(clientId, opts, callback);
+  console.log(body);
+});
 ```
 
 
@@ -323,99 +395,72 @@ Terminal referencia a solução captura que retorna a identificação do termina
 <aside class="request"><span class="method post">GET</span> <span class="endpoint">/v1/terminals</span></aside>
 
 ```shell
-curl -X get "https://api.cielo.com.br/affiliate/v1/terminals?proposalNumber="
-```
-
-```json
-
+curl -X GET \
+  'https://apidev.cielo.com.br/sandbox/affiliate/v1/terminals?proposalNumber=12345' \
+  -H 'cache-control: no-cache' \
+  -H 'client_id: LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ' \
+  -H 'content-type: application/json'
 ```
 
 ```java
+OkHttpClient client = new OkHttpClient();
 
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import .MerchantsApi;
+Request request = new Request.Builder()
+  .url("https://apidev.cielo.com.br/sandbox/affiliate/v1/terminals?proposalNumber=12345")
+  .get()
+  .addHeader("content-type", "application/json")
+  .addHeader("client_id", "LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ")
+  .build();
 
-import java.io.File;
-import java.util.*;
-
-public class MerchantsApiExample {
-
-    public static void main(String[] args) {
-        
-        MerchantsApi apiInstance = new MerchantsApi();
-        String clientId = clientId_example; // String | client identifier
-        String proposalNumber = proposalNumber_example; // String | 
-        try {
-            array['String'] result = apiInstance.terminalsGet(clientId, proposalNumber);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MerchantsApi#terminalsGet");
-            e.printStackTrace();
-        }
-    }
-}
+Response response = client.newCall(request).execute();
 ```
 
 ```php
-terminalsGet($clientId, $proposalNumber);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantsApi->terminalsGet: ', $e->getMessage(), PHP_EOL;
+$request = new HttpRequest();
+$request->setUrl('https://apidev.cielo.com.br/sandbox/affiliate/v1/terminals');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setQueryData(array(
+  'proposalNumber' => '12345'
+));
+
+$request->setHeaders(array(
+  'client_id' => 'LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ',
+  'content-type' => 'application/json'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
 }
 ```
 
-```c#
-using System;
-using System.Diagnostics;
-using .Api;
-using .Client;
-using ;
-
-namespace Example
-{
-    public class terminalsGetExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new MerchantsApi();
-            var clientId = clientId_example;  // String | client identifier
-            var proposalNumber = proposalNumber_example;  // String | 
-
-            try
-            {
-                array['String'] result = apiInstance.terminalsGet(clientId, proposalNumber);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling MerchantsApi.terminalsGet: " + e.Message );
-            }
-        }
-    }
-}
+```csharp
+var client = new RestClient("https://apidev.cielo.com.br/sandbox/affiliate/v1/terminals?proposalNumber=12345");
+var request = new RestRequest(Method.GET);
+request.AddHeader("client_id", "LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ");
+request.AddHeader("content-type", "application/json");
+IRestResponse response = client.Execute(request);
 ```
 
 ```javascript
-var  = require('');
+var request = require("request");
 
-var api = new .MerchantsApi()
+var options = { method: 'GET',
+  url: 'https://apidev.cielo.com.br/sandbox/affiliate/v1/terminals',
+  qs: { proposalNumber: '12345' },
+  headers: 
+   { client_id: 'LTwVuZSfW1iyQDxyOQRYJSrHyFaowzlnFmofCAmUsmmSzER4rZ',
+     'content-type': 'application/json' } };
 
-var clientId = clientId_example; // {String} client identifier
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-var proposalNumber = proposalNumber_example; // {String} 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.terminalsGet(clientId, proposalNumber, callback);
+  console.log(body);
+});
 ```
 
 # SDKs (Opcional)
